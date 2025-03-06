@@ -1,9 +1,9 @@
 import os.path
 
-from starkware.starknet.services.api.contract_class import ContractClass
+from starkware.starknet.services.api.contract_class.contract_class import DeprecatedCompiledClass
 
 DIR = os.path.dirname(__file__)
 
-bridge_contract_class = ContractClass.loads(
+bridge_contract_class = DeprecatedCompiledClass.loads(
     data=open(os.path.join(DIR, "token_bridge.json")).read()
 )
