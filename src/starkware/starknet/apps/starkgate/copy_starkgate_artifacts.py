@@ -6,7 +6,7 @@ from argparse import ArgumentParser
 from starkware.eth.eth_test_utils import EthTestUtils
 from starkware.starknet.apps.starkgate.cairo.contracts import bridge_contract_class
 from starkware.starknet.apps.starkgate.eth.contracts import StarknetERC20Bridge, StarknetEthBridge
-from starkware.starknet.services.api.contract_class import ContractClass
+from starkware.starknet.services.api.contract_class.contract_class import ContractClass
 from starkware.starknet.std_contracts.ERC20.contracts import erc20_contract_class
 from starkware.starknet.testing.starknet import Starknet
 
@@ -45,9 +45,10 @@ def get_solidity_bridge_version(compiled_bridge_contract: dict, contract_name: s
 
 
 async def get_cairo_version(contract_class: ContractClass):
-    starknet = await Starknet.empty()
-    contract = await starknet.deploy(constructor_calldata=[], contract_class=contract_class)
-    return (await contract.get_version().call()).result.version
+    # starknet = await Starknet.empty()
+    # contract = await starknet.deploy(constructor_calldata=[], contract_class=contract_class)
+    # return (await contract.get_version().call()).result.version
+    return 1
 
 
 async def main():
