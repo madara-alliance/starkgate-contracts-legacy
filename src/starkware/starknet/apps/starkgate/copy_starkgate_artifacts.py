@@ -48,7 +48,7 @@ async def get_cairo_version(contract_class: ContractClass):
     # starknet = await Starknet.empty()
     # contract = await starknet.deploy(constructor_calldata=[], contract_class=contract_class)
     # return (await contract.get_version().call()).result.version
-    1
+    return 1
 
 
 async def main():
